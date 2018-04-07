@@ -1,0 +1,20 @@
+0: magnetic fields
+1: image processing techniques
+2: investigation proposal
+3: nonlinear systems modeling
+4: plant biology
+5: earthquake research
+6: optical devices
+7: molecular synthesis
+8: social development
+9: microbial composition
+10: environmental research
+11: climate modeling
+12: evolutionary studies
+13: quantum theory
+14: science conferences
+15: educational programs
+16: neural objects
+17: wireless communications
+18: urban studies
+19: information systems

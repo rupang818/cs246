@@ -1,0 +1,40 @@
+
+curl -XPOST 'localhost:9200/task2b?pretty' -H 'Content-Type: application/json' -d'
+"index":{"_index" : "task2b", "_type": "wikipage", "_id":"1"}}
+{"abstract":"April is the 4th month of the year, and comes between March and May. It is one of four months to have 30 days.","title":"April","url":"https:\/\/simple.wikipedia.org\/wiki\/April","sections":["The Month","April in poetry","Events in April","Fixed Events","Moveable Events","Selection of Historical Events","Trivia","References"]}
+'
+
+curl -XPUT 'localhost:9200/task2b?pretty' -H 'Content-Type: application/json' -d'
+{"mappings": {
+    "wikipage" : {
+      "_all" : {
+        "type" : "string", 
+        "analyzer" : "whitespace"
+        },
+      "properties" : {
+        "abstract" : {
+          "type" :    "string",
+          "analyzer": "whitespace"
+        },
+        "title" : {
+          "type" :   "string",
+          "analyzer": "whitespace"
+        },
+        "url": {
+          "type" :   "string",
+          "analyzer": "whitespace"
+        },
+        "sections": {
+          "type": "nested",
+          "properties": {
+            "value": {
+                "type": "string",
+                "analyzer": "whitespace"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+'
